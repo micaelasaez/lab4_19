@@ -1,0 +1,10 @@
+<h3>Listado</h3>
+<table border="1" style="width:100%">
+  <tr>
+    <th>ID</th><th>NOMBRE</th><th>SEXO</th><th>PODER</th><th>TERRENO</th>
+  </tr>
+  <tr *ngFor="let item of superheroe">
+    <td>{{item.id}}</td><td>{{item.nombre}}</td><td>{{item.sexo}}</td><td>{{item.poder}}</td><td>{{item.terreno}}</td>
+  </tr>
+</table>
+

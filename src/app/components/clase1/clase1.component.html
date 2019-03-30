@@ -1,0 +1,25 @@
+<p>
+  clase1 works! (p)
+</p>
+<div>
+  Dentro del div
+  <br>
+  <h1>app-miComponente clase1 </h1>
+
+  <p *ngIf="name!=''">nombre = {{name}}</p>
+  si name es "" no lo muestra
+  <br>
+  <input type="text" [(ngModel)]="name">
+
+  <input type="button" [value]="text">
+  <br>
+  <button (click)="miFuncionClick($event)" >boton</button>
+  <br>
+  Cada elemento de la lista:
+  <div *ngFor="let item of lista">
+    {{item}}
+  </div>
+
+  <img [src]="imagen" >
+
+</div>

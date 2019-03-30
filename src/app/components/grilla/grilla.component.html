@@ -1,0 +1,10 @@
+<table border="1" style="width:100%">
+  <thead>
+    <th>ID</th><th>NOMBRE</th><th>SEXO</th><th>PODER</th><th>TERRENO</th>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let item of lista">
+      <tr app-fila [heroe]="item"></tr>
+    </ng-container>
+  </tbody>
+</table>
