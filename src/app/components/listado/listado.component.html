@@ -1,2 +1,6 @@
 <h3>Listado</h3>
 <app-grilla [lista]="listado"></app-grilla>
+
+<app-formulario (cargar)='cargar($event)'></app-formulario>
+<!-- cargar es un evento definido como el output del componente
+le pasa el objeto heroe en el .emit -->
