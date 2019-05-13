@@ -1,6 +1,18 @@
-<h3>Listado</h3>
-<app-grilla [lista]="listado"></app-grilla>
-
-<app-formulario (cargar)='cargar($event)'></app-formulario>
-<!-- cargar es un evento definido como el output del componente
-le pasa el objeto heroe en el .emit -->
+<app-menu></app-menu>
+<h1>Listado</h1>
+<table border="1" style="width:100%">
+  <thead>
+    <th>ID</th><th>NOMBRE</th><th>SEXO</th><th>PODER</th><th>TERRENO</th>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let item of lista"> <!-- contenedor especial de angular, no afecta en estilos -->
+      <tr>
+        <td>{{item.id}}</td>
+        <td>{{item.nombre}}</td>
+        <td>{{item.sexo}}</td>
+        <td>{{item.poder}}</td>
+        <td>{{item.terreno}}</td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>

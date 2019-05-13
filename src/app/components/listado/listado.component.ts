@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Heroe } from './../../clases/heroe';
+import { HeroeService } from '../../services/heroe.service';
 
 @Component({
   selector: 'app-listado',
@@ -7,17 +7,13 @@ import { Heroe } from './../../clases/heroe';
   styleUrls: ['./listado.component.css']
 })
 export class ListadoComponent implements OnInit {
-  listado = Heroe.GetData();
+  public lista: any;
 
-  constructor() {
-  }
+  constructor(private serviceHeroe: HeroeService) {
+    this.lista = serviceHeroe.GetData();
+   }
 
   ngOnInit() {
-  }
-
-  public cargar(heroe: Heroe) {
-    console.log(heroe);
-    Heroe.AddData(heroe);
   }
 
 }
