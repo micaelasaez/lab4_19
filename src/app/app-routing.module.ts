@@ -1,3 +1,4 @@
+import { GaleriaComponent } from './components/galeria/galeria.component';
 import { AdminService } from './services/admin.service';
 import { ListadoComponent } from './components/listado/listado.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -8,6 +9,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CargaComponent } from './components/carga/carga.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthService } from './services/auth.service';
+import { FileReaderComponent } from './components/file-reader/file-reader.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -18,6 +20,8 @@ const routes: Routes = [
   // auth va a comprobar que haya token - admin comprueba la validez del token
   { path: 'carga', component: CargaComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'files', component: FileReaderComponent },
+  { path: 'galeria', component: GaleriaComponent },
   { path: '**', redirectTo: '/error', pathMatch: 'full'}
 ];
 

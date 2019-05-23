@@ -14,6 +14,12 @@ import { LoginComponent } from './components/login/login.component';
 import { LoginService } from './services/login.service';
 import { AuthService } from './services/auth.service';
 
+import { FileReaderComponent } from './components/file-reader/file-reader.component';
+import { GaleriaComponent } from './components/galeria/galeria.component';
+
+import { FileDropModule } from 'ngx-file-drop';
+import { NgxGalleryModule } from 'ngx-gallery';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,14 +28,18 @@ import { AuthService } from './services/auth.service';
     HomeComponent,
     MenuComponent,
     CargaComponent,
-    LoginComponent
+    LoginComponent,
+    FileReaderComponent,
+    GaleriaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FileDropModule,
+    NgxGalleryModule
   ],
   providers: [
     HeroeService,

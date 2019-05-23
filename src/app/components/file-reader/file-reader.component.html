@@ -1,0 +1,28 @@
+<h2>File Reader</h2>
+<div class="center">
+  <file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)"
+  (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" accept="png, jpg, jpeg" multiple="false">
+      <span>optional content (don't set dropZoneLabel then)</span>
+  </file-drop>
+  <div class="upload-table">
+      <table class="table">
+          <thead>
+              <tr>
+                  <th colspan="2">Name</th>
+              </tr>
+          </thead>
+          <tbody class="upload-name-style">
+              <tr *ngFor="let item of files; let i=index">
+                  <td><strong>{{ item.relativePath }}</strong></td>
+                  <td><img [src]="urls[i]" style="width: 200px; height: 200px;"></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <h3 *ngIf="guardada">Imagen guardada!</h3>
+                  <h3 *ngIf="nophoto">Ese archivo no es una imagen!</h3>
+                </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
