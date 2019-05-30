@@ -47,7 +47,7 @@ export class FileReaderComponent implements OnInit {
               const formData = new FormData();
               // formData.append('name', droppedFile.relativePath);
               formData.append('logo', file, droppedFile.relativePath);
-              this.http.post('http://localhost/backend/imagen', formData).subscribe(data => {
+              this.http.post('http://localhost/lab4/backend/', formData).subscribe(data => {
                 console.log(data);
                 this.guardada = true;
               });

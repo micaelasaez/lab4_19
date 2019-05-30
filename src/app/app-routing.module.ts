@@ -1,3 +1,4 @@
+import { FirebaseExampleComponent } from './components/firebase-example/firebase-example.component';
 import { GaleriaComponent } from './components/galeria/galeria.component';
 import { AdminService } from './services/admin.service';
 import { ListadoComponent } from './components/listado/listado.component';
@@ -19,9 +20,10 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [ AuthService, AdminService] },
   // auth va a comprobar que haya token - admin comprueba la validez del token
   { path: 'carga', component: CargaComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/menu', pathMatch: 'full' },
   { path: 'files', component: FileReaderComponent },
   { path: 'galeria', component: GaleriaComponent },
+  { path: 'firebase', component: FirebaseExampleComponent },
   { path: '**', redirectTo: '/error', pathMatch: 'full'}
 ];
 

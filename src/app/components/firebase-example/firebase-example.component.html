@@ -1,0 +1,10 @@
+<h3>Firebase Database</h3>
+<div>
+  <input type="text" placeholder="Ingrese marca" [(ngModel)]="marca">
+  <input type="number" placeholder="Ingrese precio" [(ngModel)]="precio" min="0">
+  <button (click)="Agregar()">Agregar</button>
+</div>
+<br>
+<div *ngFor="let item of items | async">
+  {{item.marca}} - {{item.precio}}
+</div>

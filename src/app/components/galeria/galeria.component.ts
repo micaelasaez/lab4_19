@@ -39,7 +39,8 @@ export class GaleriaComponent implements OnInit {
           }
       ];
       const array = [];
-      this.http.get('http://localhost/backend/imagen').subscribe( (data: any) => {
+
+      this.http.get('http://localhost/lab4/backend/').subscribe( (data: any) => {
         console.log(data);
         for ( const i of data) {
           array.push({

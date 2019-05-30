@@ -20,6 +20,12 @@ import { GaleriaComponent } from './components/galeria/galeria.component';
 import { FileDropModule } from 'ngx-file-drop';
 import { NgxGalleryModule } from 'ngx-gallery';
 
+import { AngularFireModule } from '@angular/fire';
+import { firebaseConfig } from '../environments/environment';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { FirebaseExampleComponent } from './components/firebase-example/firebase-example.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +36,8 @@ import { NgxGalleryModule } from 'ngx-gallery';
     CargaComponent,
     LoginComponent,
     FileReaderComponent,
-    GaleriaComponent
+    GaleriaComponent,
+    FirebaseExampleComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +46,10 @@ import { NgxGalleryModule } from 'ngx-gallery';
     ReactiveFormsModule,
     HttpClientModule,
     FileDropModule,
-    NgxGalleryModule
+    NgxGalleryModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule
   ],
   providers: [
     HeroeService,
