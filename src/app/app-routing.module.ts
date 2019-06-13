@@ -11,13 +11,15 @@ import { CargaComponent } from './components/carga/carga.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthService } from './services/auth.service';
 import { FileReaderComponent } from './components/file-reader/file-reader.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'error', component: ErrorComponent },
   { path: 'menu', component: MenuComponent },
   { path: 'listado', component: ListadoComponent },
-  { path: 'login', component: LoginComponent, canActivate: [ AuthService, AdminService] },
+  { path: 'signup', component: SignupComponent },
+  { path: 'login', component: LoginComponent/*, canActivate: [ AuthService, AdminService]*/ },
   // auth va a comprobar que haya token - admin comprueba la validez del token
   { path: 'carga', component: CargaComponent },
   { path: '', redirectTo: '/menu', pathMatch: 'full' },

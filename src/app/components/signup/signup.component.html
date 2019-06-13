@@ -1,0 +1,14 @@
+<h1>SignUp</h1>
+<div style="width: 50%; text-align: center;">
+  <form [formGroup]="formularioLogin">
+    <label>Ingrese correo:</label>
+    <input formControlName="email" type="text" placeholder="name@example.com"
+    [ngClass]="{error: !formularioLogin.controls.email.valid}"><br>
+    <label>Ingrese clave:</label>
+    <input type="password" placeholder="******" formControlName="pass"><br><br>
+
+    <button type="submit" (click)="Ingresar()"
+      [disabled]="formularioLogin.invalid">Registrarse</button>
+    <button type="reset">Limpiar</button>
+  </form>
+</div>

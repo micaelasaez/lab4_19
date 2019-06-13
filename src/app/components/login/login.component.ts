@@ -1,3 +1,5 @@
+import { AuthService } from './../../services/auth.service';
+import { FirebaseAuthService } from './../../services/firebase-auth.service';
 import { LoginService } from './../../services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -11,7 +13,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   public formularioLogin: FormGroup;
 
-  constructor(private loginService: LoginService, private router: Router) { }
+  constructor(private loginService: LoginService, private router: Router,
+    private authServ: FirebaseAuthService) { }
 
   ngOnInit() {
     this.formularioLogin = new FormGroup({
@@ -22,12 +25,12 @@ export class LoginComponent implements OnInit {
 
   public Ingresar() {
     console.log(this.formularioLogin.value);
-    this.loginService.LogIn(this.formularioLogin.value.email, this.formularioLogin.value.pass).subscribe( rta => {
-      console.log(rta);
-// tslint:disable-next-line: no-string-literal
-      const token = rta['empleadoJWT'];
-      localStorage.setItem('token', token);
-      this.router.navigate(['/menu']);
+    this.authServ.IniciarSesion(this.formularioLogin.value.email, this.formularioLogin.value.pass).then( (res) => {
+      if (res) {
+        this.router.navigate(['/home']);
+      } else {
+        alert('no verificó email');
+      }
     });
   }
 

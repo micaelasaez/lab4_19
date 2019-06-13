@@ -2,4 +2,3 @@ https://firebase.google.com/docs/database/web/read-and-write?authuser=0#basic_wr
 https://github.com/angular/angularfire2/blob/master/docs/ionic/cli.md
 https://github.com/angular/angularfire2
 https://firebase.google.com/docs/hosting/quickstart?hl=es-419
-https://firebase.google.com/docs/auth/web/email-link-auth

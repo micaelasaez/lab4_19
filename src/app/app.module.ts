@@ -24,7 +24,9 @@ import { AngularFireModule } from '@angular/fire';
 import { firebaseConfig } from '../environments/environment';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FirebaseExampleComponent } from './components/firebase-example/firebase-example.component';
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { FirebaseExampleComponent } from './components/firebase-example/firebase
     LoginComponent,
     FileReaderComponent,
     GaleriaComponent,
-    FirebaseExampleComponent
+    FirebaseExampleComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ import { FirebaseExampleComponent } from './components/firebase-example/firebase
     NgxGalleryModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [
     HeroeService,
